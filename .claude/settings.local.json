@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp:*)",
+      "Bash(cp -r /Users/anderson.filho/Documents/personal/backend-package-nestjs/packages/cache/dist/. /Users/anderson.filho/Documents/personal/backend-api/node_modules/@adatechnology/cache/dist/)",
+      "Bash(cp -r /Users/anderson.filho/Documents/personal/backend-package-nestjs/packages/http/dist/. /Users/anderson.filho/Documents/personal/backend-api/node_modules/@adatechnology/http-client/dist/)",
+      "Bash(cp -r /Users/anderson.filho/Documents/personal/backend-package-nestjs/packages/keycloak/dist/. /Users/anderson.filho/Documents/personal/backend-api/node_modules/@adatechnology/auth-keycloak/dist/)"
+    ]
+  }
+}
