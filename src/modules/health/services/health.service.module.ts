@@ -2,10 +2,11 @@ import { Module } from '@nestjs/common';
 
 import { HEALTH_CHECK_SERVICE_PROVIDER } from '@modules/health/health.token';
 import { HealthCheckService } from '@modules/health/services/health.check.service';
-import { HealthApplicationUseCasesModule } from '@modules/health/use-cases/health-use-cases.module';
+
+import { HealthUseCasesModule } from '../use-cases/health-use-cases.module';
 
 @Module({
-  imports: [HealthApplicationUseCasesModule],
+  imports: [HealthUseCasesModule],
   providers: [
     {
       provide: HEALTH_CHECK_SERVICE_PROVIDER,

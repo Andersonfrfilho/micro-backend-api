@@ -1,23 +1,22 @@
-import type { PhoneRepositoryInterface } from '@modules/phone/phone.interface';
+import { type AddressRepositoryInterface } from '@app/modules/address/repositories/address.repository.interface';
 import { Inject, Injectable } from '@nestjs/common';
 
-import type { AddressRepositoryInterface } from '@app/modules/address/repositories/address.repository.interface';
-import { ADDRESS_REPOSITORY_PROVIDE } from '@app/modules/address/address.token';
 import { PHONE_REPOSITORY_PROVIDE } from '@app/modules/phone/phone.token';
 import { AddressTypeEnum } from '@app/modules/shared';
+import type { PhoneRepositoryInterface } from '@modules/phone/phone.interface';
 import type { QueueProducerMessageProviderInterface } from '@modules/shared/providers/queue/producer/producer.interface';
 import { QUEUE_PRODUCER_PROVIDER } from '@modules/shared/providers/queue/producer/producer.token';
 import { UserErrorFactory } from '@modules/user/factories';
-import type { UserRepositoryInterface } from '@modules/user/repositories/user.repository.interface';
 import { USER_REPOSITORY_PROVIDE } from '@modules/user/user.token';
 
-import type { UserAddressRepositoryInterface } from '../../repositories/user-address.repository.interface';
-import { USER_ADDRESS_REPOSITORY_PROVIDE } from '../../user-address.token';
+import { type UserAddressRepositoryInterface } from '../domain/repositories/user-address.repository.interface';
+import { type UserRepositoryInterface } from '../domain/repositories/user.repository.interface';
 import type {
   UserCreateUseCaseInterface,
   UserCreateUseCaseParams,
   UserCreateUseCaseResponse,
 } from '../interfaces/create-user.interface';
+import { USER_ADDRESS_REPOSITORY_PROVIDE } from '../user-address.token';
 import { parsePhone } from '../util/phone.util';
 
 @Injectable()
@@ -27,7 +26,7 @@ export class UserApplicationCreateUseCase implements UserCreateUseCaseInterface 
     private readonly userRepositoryProvide: UserRepositoryInterface,
     @Inject(PHONE_REPOSITORY_PROVIDE)
     private readonly phoneRepositoryProvide: PhoneRepositoryInterface,
-    @Inject(ADDRESS_REPOSITORY_PROVIDE)
+    @Inject(USER_ADDRESS_REPOSITORY_PROVIDE)
     private readonly addressRepositoryProvide: AddressRepositoryInterface,
     @Inject(USER_ADDRESS_REPOSITORY_PROVIDE)
     private readonly userAddressRepositoryProvide: UserAddressRepositoryInterface,

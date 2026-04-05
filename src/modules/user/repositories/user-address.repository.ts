@@ -1,15 +1,16 @@
+import { UserAddress } from '@app/modules/shared/entities/user-address.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { CONNECTIONS_NAMES } from '@app/modules/shared/providers/database/database.constant';
-import { UserAddress } from '@modules/shared/entities/user-address.entity';
 import { UserAddressErrorFactory } from '@modules/user/factories/user-address.error.factory';
-import type {
+
+import {
   CreateUserAddressParams,
   UpdateUserAddressParams,
   UserAddressRepositoryInterface,
-} from '@modules/user/repositories/user-address.repository.interface';
+} from '../domain/repositories/user-address.repository.interface';
 
 @Injectable()
 export class UserAddressRepository implements UserAddressRepositoryInterface {

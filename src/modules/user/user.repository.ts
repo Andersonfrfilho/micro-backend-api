@@ -3,10 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { CONNECTIONS_NAMES } from '@app/modules/shared/providers/database/database.constant';
-import { User } from '@modules/shared/entities/user.entity';
 import { UserErrorFactory } from '@modules/user/factories';
 import { CreateUserParams, UpdateUserParams } from '@modules/user/types';
-import { UserRepositoryInterface } from '@modules/user/repositories/user.repository.interface';
+
+import { User } from '../shared/entities/user.entity';
+
+import { UserRepositoryInterface } from './domain/repositories/user.repository.interface';
 
 @Injectable()
 export class UserRepository implements UserRepositoryInterface {

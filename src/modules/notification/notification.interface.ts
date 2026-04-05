@@ -1,4 +1,4 @@
-import { Notification } from '../shared/domain/entities/notification.entity';
+import { Notification } from '../shared/entities/notification.entity';
 
 export interface NotificationRepositoryInterface {
   create(notification: CreateNotificationParams): Promise<Notification>;

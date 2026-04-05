@@ -13,3 +13,5 @@ export interface DatabaseConfigs {
   postgres: DatabaseConfigValues;
   mongo: DatabaseConfigValues;
 }
+
+export type NodeEnv = 'development' | 'production' | 'test';

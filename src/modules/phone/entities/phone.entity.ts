@@ -1,3 +1,4 @@
+import { User } from '@app/modules/shared/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
@@ -8,8 +9,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-
-import { User } from '@app/modules/shared/domain/entities/user.entity';
 
 @Entity('phones')
 export class Phone {

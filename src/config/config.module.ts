@@ -5,7 +5,8 @@ import { ConfigModule as NestConfigModule } from '@nestjs/config';
 
 import { ENVIRONMENT_SERVICE_PROVIDER } from '@config/config.token';
 import envValidation from '@config/env.validation';
-import { EnvironmentProvider } from '@config/infrastructure/providers/environment.provider';
+
+import { EnvironmentProvider } from './providers/environment.provider';
 
 const pathLocationEnvFile = join(process.cwd(), '.env');
 

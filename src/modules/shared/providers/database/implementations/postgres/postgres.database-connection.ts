@@ -4,12 +4,6 @@ import { UserAddress } from '@app/modules/shared/entities/user-address.entity';
 import { User } from '@app/modules/shared/entities/user.entity';
 import { DataSource } from 'typeorm';
 
-import {
-  BenchmarkNanoidEntity,
-  BenchmarkSnowflakeEntity,
-  BenchmarkUUIDv4Entity,
-  BenchmarkUUIDv7Entity,
-} from '@app/modules/benchmark/entities/benchmark.entities';
 import { getDatabaseConfig } from '@config/database-config';
 
 import { migrations } from '../../migrations/index';
@@ -24,16 +18,7 @@ const PostgresDataSource = new DataSource({
   database: config.postgres.database,
   logging: config.postgres.logging,
   synchronize: config.postgres.synchronize,
-  entities: [
-    User,
-    Phone,
-    Address,
-    UserAddress,
-    BenchmarkUUIDv7Entity,
-    BenchmarkNanoidEntity,
-    BenchmarkSnowflakeEntity,
-    BenchmarkUUIDv4Entity,
-  ],
+  entities: [User, Phone, Address, UserAddress],
   migrations,
   migrationsRun: true,
 });

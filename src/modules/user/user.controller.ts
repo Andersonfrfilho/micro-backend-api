@@ -11,8 +11,9 @@ import {
 
 import type { UserServiceInterface } from '@modules/user/interfaces/create-user.interface';
 import { USER_SERVICE_PROVIDE } from '@modules/user/user.token';
-import { CreateUserRequestDto } from '@modules/user/shared/dtos/create-user-request.dto';
-import { CreateUserResponseDto } from '@modules/user/shared/dtos/create-user-response.dto';
+
+import { CreateUserRequestDto } from './dtos/create-user-request.dto';
+import { CreateUserResponseDto } from './dtos/create-user-response.dto';
 
 @Injectable()
 @Controller('/user')

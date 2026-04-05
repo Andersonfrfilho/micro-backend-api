@@ -1,4 +1,4 @@
-import { Notification } from '@app/modules/shared/domain/entities/notification.entity';
+import { Notification } from '@app/modules/shared/entities/notification.entity';
 
 export interface CreateNotificationUseCaseParams {
   message: string;
