@@ -1,5 +1,4 @@
 import { HttpModule } from '@adatechnology/http-client';
-import { LoggerModule } from '@adatechnology/logger';
 import { Module } from '@nestjs/common';
 
 import { PokemonController } from './pokemon.controller';
@@ -7,7 +6,6 @@ import { HTTP_POKEMON } from './pokemon.token';
 
 @Module({
   imports: [
-    LoggerModule.forRoot(),
     HttpModule.forRoot(
       { baseURL: 'https://pokeapi.co/api/v2', timeout: 10_000 },
       {

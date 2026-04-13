@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { QUEUE_PRODUCER_PROVIDER } from '../../producer.token';
+import { QUEUE_PRODUCER_PROVIDER } from '@modules/shared/providers/queue/producer/producer.token';
 
 import { RabbitBindingsService } from './rabbit.bindings.service';
 import { rabbitConnection } from './rabbit.connection';

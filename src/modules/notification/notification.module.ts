@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { Notification } from '@modules/shared/entities/notification.entity';
 import { SharedProviderDatabaseImplementationsMongoModule } from '@modules/shared/providers/database/implementations/mongo/mongo.module';
 
-import { CONNECTIONS_NAMES } from '../shared/providers/database/database.constant';
-import { SharedModule } from '../shared/shared.module';
+import { CONNECTIONS_NAMES } from '@modules/shared/providers/database/database.constant';
+import { SharedModule } from '@modules/shared/shared.module';
 
 import { NotificationController } from './notification.controller';
 import { NotificationService } from './notification.service';
@@ -31,7 +32,6 @@ import { UpdateNotificationUseCase } from './use-cases/update-notification.use-c
 @Module({
   imports: [
     TypeOrmModule.forFeature([Notification], CONNECTIONS_NAMES.MONGO),
-    SharedProviderDatabaseImplementationsMongoModule,
     SharedModule,
   ],
   controllers: [NotificationController],

@@ -26,6 +26,29 @@ setup-env:
 	fi
 
 # ========================
+# Migrations
+# ========================
+
+migrate: setup-env
+	npm run migration:run
+
+migrate-revert: setup-env
+	npm run migration:revert
+
+migrate-show: setup-env
+	npm run migration:show
+
+# Run migrations inside the docker container
+docker-migrate: setup-env
+	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) exec api npm run migration:run
+
+docker-migrate-revert: setup-env
+	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) exec api npm run migration:revert
+
+docker-migrate-show: setup-env
+	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) exec api npm run migration:show
+
+# ========================
 # Docker commands
 # ========================
 
@@ -192,4 +215,4 @@ setup: setup-env
 	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) up -d --remove-orphans
 	@echo "✅ Setup completo! Projeto pronto para usar."
 
-.PHONY: all rebuild-app setup-env clean clean-all clean-images force-remove down stop app sonar-up sonar-down sonar-scan sonar-setup sonar-token sonar-all clean-safe database_postgres database_mongo queue_rabbitmq keycloak keycloak-down keycloak-stop keycloak-logs keycloak-admin setup setup-e2e-databases test-e2e-ready test-e2e-docker
+.PHONY: all rebuild-app setup-env clean clean-all clean-images force-remove down stop app sonar-up sonar-down sonar-scan sonar-setup sonar-token sonar-all clean-safe database_postgres database_mongo queue_rabbitmq keycloak keycloak-down keycloak-stop keycloak-logs keycloak-admin setup setup-e2e-databases test-e2e-ready test-e2e-docker migrate migrate-revert migrate-show docker-migrate docker-migrate-revert docker-migrate-show

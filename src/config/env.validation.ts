@@ -21,6 +21,7 @@ export default Joi.object({
   DATABASE_POSTGRES_USER: Joi.string().default('postgres'),
   DATABASE_POSTGRES_PASSWORD: Joi.string().required(), // Obrigatório
   DATABASE_POSTGRES_SYNCHRONIZE: Joi.boolean().default(false),
+  DATABASE_POSTGRES_RUN_MIGRATIONS: Joi.boolean().default(false),
   DATABASE_POSTGRES_LOGGING: Joi.boolean().optional(),
   DATABASE_POSTGRES_TIMEZONE: Joi.string().default('UTC'),
 
@@ -31,6 +32,7 @@ export default Joi.object({
   DATABASE_POSTGRES_TEST_E2E_USER: Joi.string().default('postgres'),
   DATABASE_POSTGRES_TEST_E2E_PASSWORD: Joi.string().required(), // Obrigatório
   DATABASE_POSTGRES_TEST_E2E_SYNCHRONIZE: Joi.boolean().default(true),
+  DATABASE_POSTGRES_TEST_E2E_RUN_MIGRATIONS: Joi.boolean().default(false),
   DATABASE_POSTGRES_TEST_E2E_LOGGING: Joi.boolean().optional(),
   DATABASE_POSTGRES_TEST_E2E_TIMEZONE: Joi.string().default('UTC'),
 

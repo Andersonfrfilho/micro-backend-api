@@ -1,4 +1,3 @@
-import { LoggerModule } from '@adatechnology/logger';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -6,9 +5,9 @@ import { UserAddress } from '@modules/shared/entities/user-address.entity';
 import { User } from '@modules/shared/entities/user.entity';
 import { SharedModule } from '@modules/shared/shared.module';
 
-import { AddressModule } from '../address/address.module';
-import { PhoneModule } from '../phone/phone.module';
-import { CONNECTIONS_NAMES } from '../shared/providers/database/database.constant';
+import { AddressModule } from '@modules/address/address.module';
+import { PhoneModule } from '@modules/phone/phone.module';
+import { CONNECTIONS_NAMES } from '@modules/shared/providers/database/database.constant';
 
 import { UserApplicationCreateUseCase } from './use-cases/create-user.use-case';
 import { UserAddressRepository } from './repositories/user-address.repository';
@@ -24,7 +23,6 @@ import {
 
 @Module({
   imports: [
-    LoggerModule.forRoot(),
     TypeOrmModule.forFeature([User, UserAddress], CONNECTIONS_NAMES.POSTGRES),
     SharedModule,
     PhoneModule,

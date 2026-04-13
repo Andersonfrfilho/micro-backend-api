@@ -7,6 +7,7 @@ export interface DatabaseConfigValues {
   timezone: string;
   logging: boolean;
   synchronize: boolean;
+  runMigrations: boolean;
 }
 
 export interface DatabaseConfigs {

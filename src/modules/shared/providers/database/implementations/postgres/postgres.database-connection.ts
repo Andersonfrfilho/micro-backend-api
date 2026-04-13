@@ -20,7 +20,7 @@ const PostgresDataSource = new DataSource({
   synchronize: config.postgres.synchronize,
   entities: [User, Phone, Address, UserAddress],
   migrations,
-  migrationsRun: true,
+  migrationsRun: config.postgres.runMigrations,
 });
 
 export default PostgresDataSource;

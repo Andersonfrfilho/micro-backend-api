@@ -25,6 +25,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
     DATABASE_POSTGRES_TIMEZONE,
     DATABASE_POSTGRES_LOGGING,
     DATABASE_POSTGRES_SYNCHRONIZE,
+    DATABASE_POSTGRES_RUN_MIGRATIONS,
 
     DATABASE_MONGO_HOST,
     DATABASE_MONGO_PORT,
@@ -41,6 +42,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
     DATABASE_POSTGRES_TEST_E2E_USER,
     DATABASE_POSTGRES_TEST_E2E_PASSWORD,
     DATABASE_POSTGRES_TEST_E2E_SYNCHRONIZE,
+    DATABASE_POSTGRES_TEST_E2E_RUN_MIGRATIONS,
     DATABASE_POSTGRES_TEST_E2E_LOGGING,
     DATABASE_POSTGRES_TEST_E2E_TIMEZONE,
 
@@ -66,6 +68,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
         timezone: DATABASE_POSTGRES_TEST_E2E_TIMEZONE,
         logging: DATABASE_POSTGRES_TEST_E2E_LOGGING ?? false,
         synchronize: DATABASE_POSTGRES_TEST_E2E_SYNCHRONIZE ?? false,
+        runMigrations: DATABASE_POSTGRES_TEST_E2E_RUN_MIGRATIONS ?? false,
       },
       mongo: {
         host: DATABASE_MONGO_TEST_E2E_HOST,
@@ -76,6 +79,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
         timezone: DATABASE_MONGO_TEST_E2E_TIMEZONE,
         logging: DATABASE_MONGO_TEST_E2E_LOGGING ?? false,
         synchronize: DATABASE_MONGO_TEST_E2E_SYNCHRONIZE ?? false,
+        runMigrations: false,
       },
     };
   }
@@ -90,6 +94,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
       timezone: DATABASE_POSTGRES_TIMEZONE,
       logging: DATABASE_POSTGRES_LOGGING ?? false,
       synchronize: DATABASE_POSTGRES_SYNCHRONIZE ?? false,
+      runMigrations: DATABASE_POSTGRES_RUN_MIGRATIONS ?? false,
     },
     mongo: {
       host: DATABASE_MONGO_HOST,
@@ -100,6 +105,7 @@ export function getDatabaseConfig(): DatabaseConfigs {
       timezone: DATABASE_MONGO_TIMEZONE,
       logging: DATABASE_MONGO_LOGGING ?? false,
       synchronize: DATABASE_MONGO_SYNCHRONIZE ?? false,
+      runMigrations: false,
     },
   };
 }

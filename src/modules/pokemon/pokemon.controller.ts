@@ -106,7 +106,7 @@ export class PokemonController {
       config: { cache: true, cacheTtl: 300_000, logContext },
     });
 
-    const abilities = (res.data?.abilities ?? []).map((a: any) => ({
+    const abilities = ((res.data as any)?.abilities ?? []).map((a: any) => ({
       name: a.ability?.name,
       isHidden: a.is_hidden,
       slot: a.slot,
