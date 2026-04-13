@@ -27,7 +27,7 @@ declare module '@modules/*' {
 }
 
 // Specific provider-level wildcard for local providers
-declare module '@modules/shared/infrastructure/providers/*' {
+declare module '@modules/shared/providers/*' {
   const value: any;
   export default value;
 }

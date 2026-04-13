@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { LOG_PROVIDER } from '@modules/shared/infrastructure/providers/log/log.token';
+import { LOG_PROVIDER } from '@modules/shared/providers/log/log.token';
 import { AppModule } from '../../../src/app.module';
 
 describe('Auth Module - Performance E2E Tests', () => {

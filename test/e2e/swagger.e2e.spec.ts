@@ -5,8 +5,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { EnvironmentProviderInterface } from '../../src/config';
 import { ENVIRONMENT_SERVICE_PROVIDER } from '../../src/config/config.token';
 import { swaggerConfig } from '../../src/config/swagger.config';
-import { docsFactory } from '@modules/shared/infrastructure/interceptors/docs';
-import { LOG_PROVIDER } from '@modules/shared/infrastructure/providers/log/log.token';
+import { docsFactory } from '@modules/shared/interceptors/docs';
+import { LOG_PROVIDER } from '@modules/shared/providers/log/log.token';
 import { AppModule } from '../../src/app.module';
 
 describe('Swagger Documentation (e2e)', () => {
