@@ -142,7 +142,7 @@ export class HealthCheckResponseDto {
 └──────────────────────┬──────────────────────────────────────┘
                        ▼
 ┌──────────────────────────────────────────────────────────────┐
-│   HealthCheckService (@Injectable, INFRASTRUCTURE)           │
+│   HealthCheckService (@Injectable, )           │
 │   Orquestra chamada do UseCase                               │
 │   Pode adicionar logging, tratamento de erro, etc            │
 └──────────────────────┬──────────────────────────────────────┘
