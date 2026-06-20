@@ -27,6 +27,8 @@
     "test:e2e:watch": "jest --watch --config jest.config.e2e.ts",
     "test:all": "npm run test:unit && npm run test:e2e",
     "sonar": "sonar-scanner",
+    "seed": "ts-node -r tsconfig-paths/register src/database/seeds/run-seeds.ts",
+    "seed:docker": "docker-compose exec api npm run seed",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:show": "npm run typeorm migration:show -- -d src/modules/shared/providers/database/implementations/postgres/typeorm.config.ts",
     "migration:run": "npm run typeorm migration:run -- -d src/modules/shared/providers/database/implementations/postgres/typeorm.config.ts",

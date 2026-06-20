@@ -49,6 +49,16 @@ docker-migrate-show: setup-env
 	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) exec api npm run migration:show
 
 # ========================
+# Seeds
+# ========================
+
+seed: setup-env
+	npm run seed
+
+docker-seed: setup-env
+	docker-compose -p $(PROJECT_NAME) -f $(COMPOSE_FILE) exec api npm run seed
+
+# ========================
 # Docker commands
 # ========================
 
